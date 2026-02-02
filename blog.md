@@ -217,3 +217,45 @@ $$x_0-2^{31},x_0-2^{30},x_0,x_0+2^{30}$$
 
 # 史莱姆区块课题〔2〕：3×n 联寻找
 
+## 前言
+
+你需要先阅读前一篇文章。
+
+## 核心想法
+
+仿照前一篇文章，我们仍旧寻找史莱姆区块列，  
+找到 3 元碰撞对，即可继续尝试解方程。
+
+## 技术细节
+
+### 思路
+
+$$
+\begin{cases}
+seed+f(x)=c_1\\
+seed+f(x+1)=c_2\\
+seed+f(x+2)=c_3
+\end{cases}
+$$
+
+### 解方程
+
+
+$$
+\begin{aligned}
+&\begin{cases}
+seed+f(x)=c_1\\
+seed+f(x+1)=c_2\\
+seed+f(x+2)=c_3
+\end{cases}\\
+\Rightarrow\ 
+&\begin{cases}
+f(x+1)-f(x)\equiv9974284x+10934753\equiv c_2-c_1\pmod{2^{32}}\\
+f(x+2)-f(x+1)\equiv9974284(x+1)+10934753\equiv c_3-c_2\pmod{2^{32}}\\
+\end{cases}\\
+\Rightarrow\ &9974284+2c_2=c_3+c_1\pmod{2^{32}}
+\end{aligned}
+$$
+
+这是一个必要条件，该条件等价于 3sum 问题。
+
