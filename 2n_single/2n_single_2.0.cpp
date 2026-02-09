@@ -31,7 +31,7 @@ void checkB(const i8 B){
     i4 up=1,down=1;
     while(H(c+g0[up  ]))up  ++;up  --;
     while(H(c+g1[down]))down++;down--;
-    if(up+down+1<=n)continue;
+    if(up+down+1<n)continue;
     posB.push_back({c,up,down});
   }
 }

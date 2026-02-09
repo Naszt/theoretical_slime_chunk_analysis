@@ -23,7 +23,7 @@ inline std::optional<std::pair<i4,i4>>join(i8 c){
   i4 up=1,down=1;
   while(H(c+g(Z+up  )))up  ++;up  --;
   while(H(c+g(Z-down)))down++;down--;
-  if(up+down+1<=n)return std::nullopt;
+  if(up+down+1<n)return std::nullopt;
   return std::pair{up,down};
 }
 i4 solve(i8 c1,i8 c2,i4 cnt){
